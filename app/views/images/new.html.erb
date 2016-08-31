@@ -1,0 +1,38 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<%= stylesheet_link_tag 'application.css' %>
+</head>
+<body>
+
+
+
+
+
+<div class = 'row'>
+<div class = "col-md-4">
+<h1>Post Image</h1>
+<h4>Jpeg / Png / Gif</h4>
+
+<%= form_for @image, :url => images_path, :html => {:multipart => true} do |f| %>
+ 
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+  </br>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  </br>
+  </br>
+  <%= f.submit :submit %>
+<% end %>
+</div>
+</div>
+
+
+
+</body>
+</html>

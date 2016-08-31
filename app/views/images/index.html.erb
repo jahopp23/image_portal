@@ -1,0 +1,64 @@
+<html>
+<head><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<%= stylesheet_link_tag "application.css" %>
+
+</head>
+<body>
+<div class = "container">
+<div class = "row">
+<div class = "col-md-4">
+
+
+
+</div>
+</div>
+
+
+
+</br>
+<div id = 'main' class = "col-md-4">
+
+<div class = 'header'>
+<h1>ImagePortal</h1>
+<h4>jpeg / png / gif</h4>
+<ol class = 'breadcrumb'>
+<li><a href = '/images/new'>PostImage</a></li>
+</ol>
+</div>
+
+
+<% if @images %>
+<% @images.each do |image| %>
+   <div class = "panel panel-default">
+    <!--Panel Contents -->
+
+      <div class = "panel-heading">
+         <h5><%= image_tag image.title %></h5>
+      </div>
+
+      <div class = "panel-body">
+        <%= image_tag image.avatar.url %>
+      </div>
+
+      <!-- List Group --> 
+      <ul class = "list-group">
+       <li class = "list-group-item"><%= image_tag image.description %></li>
+   	   <li class = "list-group-item"><%= image_tag image.created_at %></li>
+   	  </ul>
+   	  </div>
+
+<% end %>
+<% end %>
+<div class = 'col-md-4'>
+
+
+</div>
+<div class="well well-sm">Created by John A. Hopper 2016</div>
+</div>
+
+
+
+</body>
+</html>
